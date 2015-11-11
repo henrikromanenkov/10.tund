@@ -7,7 +7,7 @@
 	// klassi loomisel(new User)
 	function __construct($mysqli){
 		
-		// this tähendab selle klassi muutuhat
+		// this tähendab selle klassi muutujat
 		$this->connection = $mysqli;
 		
 	}

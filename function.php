@@ -10,24 +10,24 @@
 	
 	$mysqli = new mysqli($servername, $server_username, $server_password, $database);
 	
-	// saadan ühenduse classi ja loon uue classi
+	// saadan Ã¼henduse classi ja loon uue classi
 	$User = new User($mysqli);
 	
 	
 	/*
-	// Loon andmebaasi ühenduse
+	// Loon andmebaasi Ã¼henduse
 	require_once("../config_global.php");
 	$database = "if15_henrrom";
 	
 	//tellitakse sessioon, mida hoitakse serveris.
-	//kõik sessioni muutujad on kättesaadavad kuni viimase brauseri akna sulgemiseni.
+	//kÃµik sessioni muutujad on kÃ¤ttesaadavad kuni viimase brauseri akna sulgemiseni.
 	session_start();
 	
-	//võtab andmed ja sisestab andmebaasi
+	//vÃµtab andmed ja sisestab andmebaasi
 	function createUser($user_email, $hash){
 		$mysqli = new mysqli($GLOBALS["servername"], $GLOBALS["server_username"], $GLOBALS["server_password"], $GLOBALS["database"]);
 		$stmt = $mysqli->prepare('INSERT INTO user_sample (email, password) VALUES (?, ?)');
-		// asendame küsimärgid. ss - s on string email, s on string password
+		// asendame kÃ¼simÃ¤rgid. ss - s on string email, s on string password
 		$stmt->bind_param("ss", $user_email, $hash);
 		$stmt->execute();
 		$stmt->close();
@@ -44,7 +44,7 @@
 		//kontrolli, kas tulemus leiti
 		if($stmt->fetch()){
 			//ab'i oli midagi
-			echo "Email ja parool õiged, kasutaja id=".$id_from_db;	
+			echo "Email ja parool Ãµiged, kasutaja id=".$id_from_db;	
 			
 			//tekitan sessiooni muutujad
 			$_SESSION["logged_in_user_id"] = $id_from_db;
@@ -66,15 +66,15 @@
 		$stmt = $mysqli->prepare('INSERT INTO car_plates (user_id, number_plate, color) VALUES (?,?,?)');
 		$stmt->bind_param("iss", $_SESSION["logged_in_user_id"], $number_plate, $color);
 		
-		//Sõnum
+		//SÃµnum
 		$message = "";
 		
 		if($stmt->execute()){
-			//kui on tõene siis INSERT õnnestut
+			//kui on tÃµene siis INSERT Ãµnnestut
 			$message = "Sai edukalt lisatud";
 			
 		}else{
-			// kui on väär, siis kuvame error
+			// kui on vÃ¤Ã¤r, siis kuvame error
 			echo $stmt->error;
 		}
 		return $message;
